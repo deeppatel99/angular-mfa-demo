@@ -1,0 +1,53 @@
+<div class="mfa-container">
+  <mat-card class="mfa-card">
+    <h2>🔐 Multi-Factor Authentication</h2>
+
+    <!-- Generate QR Code Button -->
+    <button
+      mat-raised-button
+      color="primary"
+      class="full-width"
+      (click)="generateQRCode()"
+    >
+      Generate QR Code
+    </button>
+
+    <!-- QR Code Display -->
+    <div class="qr-container" *ngIf="qrcodeUrl">
+      <p>Scan this QR code using Microsoft Authenticator:</p>
+      <img [src]="qrcodeUrl" alt="QR Code" />
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" *ngIf="isLoading">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+
+    <!-- OTP Input -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Enter OTP</mat-label>
+      <input matInput [(ngModel)]="otpCode" />
+    </mat-form-field>
+
+    <!-- Verify Button -->
+    <button
+      mat-raised-button
+      color="accent"
+      class="full-width"
+      (click)="verifyOTP()"
+    >
+      Verify OTP
+    </button>
+
+    <!-- Verification Result Message -->
+    <p
+      class="result-message"
+      [ngClass]="{
+        success: verificationResult.includes('✅'),
+        error: verificationResult.includes('❌')
+      }"
+    >
+      {{ verificationResult }}
+    </p>
+  </mat-card>
+</div>
