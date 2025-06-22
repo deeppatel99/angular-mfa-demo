@@ -5,7 +5,7 @@ Users can scan a **QR Code**, generate **OTP codes**, and verify them using a **
 
 ## 🚀 Live Demo
 
-🔗 [Angular MFA Demo](https://angular-mfa-demo-4bxwp5w7o-deep-patels-projects-59316141.vercel.app/)
+🔗 [Angular MFA Demo](https://angular-mfa-demo-jkra8cwf4-deep-patels-projects-59316141.vercel.app/)
 
 ---
 
