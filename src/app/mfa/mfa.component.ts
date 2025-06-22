@@ -37,7 +37,7 @@ export class MfaComponent {
     this.isLoading = true;
     this.qrcodeUrl = '';
     this.http
-      .post<any>('http://localhost:3000/generate-qrcode', {
+      .post<any>('https://angular-mfa-demo-y7uh.onrender.com/generate-qrcode', {
         username: this.username,
       })
       .subscribe(
@@ -60,7 +60,7 @@ export class MfaComponent {
 
     this.isLoading = true;
     this.http
-      .post<any>('http://localhost:3000/verify-otp', {
+      .post<any>('https://angular-mfa-demo-y7uh.onrender.com/verify-otp', {
         username: this.username,
         token: this.otpCode,
       })
